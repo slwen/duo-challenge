@@ -1,3 +1,7 @@
+import React from 'react'
+import { render } from 'react-dom'
+import Main from './Main'
+
 const {ipcRenderer} = window.require('electron')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +13,4 @@ document.addEventListener('DOMContentLoaded', () => {
   n.onclick = () => { ipcRenderer.send('show-window') }
 })
 
-
-
-const main = document.querySelector('#main')
-main.innerHTML = 'hello there!'
+render(<Main />, document.querySelector('#main'))
