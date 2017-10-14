@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { Window, Text } from 'react-desktop/macOs'
+import { View } from 'react-desktop/macOs'
+import Radium from 'radium'
+
+import Header from '../Header'
+import styles from './styles'
 
 class Main extends Component {
   render () {
     return (
-      <Window
-        chrome
-        height="100%"
-        padding="10px"
-      >
-        <Text>Hello from React</Text>
-      </Window>
+      <View style={styles.window}>
+        <Header />
+      </View>
     )
   }
 }
 
-export default Main
+export default Radium(Main)
